@@ -11,10 +11,17 @@ function hendleClick() {
 
 function buscaCep(cep){
     fetch(`https://pokeapi.co/api/v2/pokemon/${cep}`)
-    .then(r => r.json())
+    .then(r => {
+        if(r.status === 404){
+            alert("Pokemon Not Found, try again")
+        }
+        return r.json()
+    })
     .then(body => {
         document.querySelector('#name').innerHTML = body.name;
         document.querySelector('#pokeId').innerHTML = body.id;
+        const pokeImg = body.sprites.front_default;
+        document.querySelector('#pokeImg').setAttribute('src', pokeImg)
         document.querySelector('.type').innerHTML = body.types[0].type.name;
 
         if(body.types[0].type.name === "grass"){

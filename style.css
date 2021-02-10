@@ -37,3 +37,7 @@ h2 {
     font-weight: 400;
     text-align: end;
 }
+
+#pokeImg {
+    width: 200px;
+}
