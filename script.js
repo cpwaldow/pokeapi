@@ -5,7 +5,6 @@ btnPokemon.addEventListener('click', hendleClick);
 
 function hendleClick() {
     event.preventDefault();
-    console.log();
     const pokeId = inputPokemon.value;
     buscaCep(pokeId);
 }
@@ -14,8 +13,6 @@ function buscaCep(cep){
     fetch(`https://pokeapi.co/api/v2/pokemon/${cep}`)
     .then(r => r.json())
     .then(body => {
-        console.log(body);
-
         document.querySelector('#name').innerHTML = body.name;
         document.querySelector('#pokeId').innerHTML = body.id;
         document.querySelector('.type').innerHTML = body.types[0].type.name;
