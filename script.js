@@ -6,7 +6,12 @@ btnPokemon.addEventListener('click', hendleClick);
 function hendleClick() {
     event.preventDefault();
     const pokeId = inputPokemon.value;
+    console.log(pokeId);
     buscaCep(pokeId);
+}
+
+function forceLower(strInput) {
+    strInput.value=strInput.value.toLowerCase();
 }
 
 function buscaCep(pokeName){
