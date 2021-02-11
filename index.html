@@ -7,38 +7,32 @@
     <title>PokeAPI</title>
 </head>
 <body>
-    <head>
+    <header>
         <section class="container">
-            <h2>Pokémon</h2>
+            <h2>Pokedex</h2>
             <p>Find more information about your favorite pokémon</p>
+            <p>You can find searching by poke name or poke number</p>
         </section>
 
-    </head>
+    </header>
 
     <body>
-        <section class="container">
+        <section class="container return-pokemon">
             <form id="buscaPokemon">
-                <label style="display: block;">Pokemon</label>
                 <input type="text" id="inputPokemon" name=Pokemon>
-                <input type="button" value="Search Pokémon" id="btnPokemon">
+                <input type="button" value="Search" id="btnPokemon">
             </form>
             <section class="name-id">
-                <div style="margin-bottom: 10px;">
-                    <span>Name:</span>
-                    <span id="name"></span>
+                <div style="margin-bottom: 15px;">
+                    <img src="" alt="" id="pokeImg">
                 </div>
                 <div style="margin-bottom: 15px;">
-                    <span>Id:</span>
+                    <span id="name"></span>
                     <span id="pokeId"></span>
                 </div>
                 <div style="margin-bottom: 15px;">
-                    <img src="" alt="Pokemon" id="pokeImg">
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <span>Type:</span>
                     <span class="type"></span>
                 </div>
-
             </section>
         </section>
     </body>

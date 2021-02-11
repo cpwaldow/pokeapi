@@ -9,8 +9,8 @@ function hendleClick() {
     buscaCep(pokeId);
 }
 
-function buscaCep(cep){
-    fetch(`https://pokeapi.co/api/v2/pokemon/${cep}`)
+function buscaCep(pokeName){
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
     .then(r => {
         if(r.status === 404){
             alert("Pokemon Not Found, try again")
@@ -18,10 +18,13 @@ function buscaCep(cep){
         return r.json()
     })
     .then(body => {
+        const pokeImg = body.sprites.other.dream_world.front_default;
+        const pokeAlt = body.name;
+        
         document.querySelector('#name').innerHTML = body.name;
         document.querySelector('#pokeId').innerHTML = body.id;
-        const pokeImg = body.sprites.front_default;
         document.querySelector('#pokeImg').setAttribute('src', pokeImg)
+        document.querySelector('#pokeImg').setAttribute('alt', pokeAlt)
         document.querySelector('.type').innerHTML = body.types[0].type.name;
 
         if(body.types[0].type.name === "grass"){
@@ -70,3 +73,11 @@ function buscaCep(cep){
 
     })
 }
+
+function hideElement(){
+    if(document.querySelector("#pokeImg").hasAttribute){
+        console.log("Imagem não aparece");
+    }
+}
+
+hideElement();
