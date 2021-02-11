@@ -2,9 +2,36 @@ body {
     background-color: #F3EFEF;
 }
 
+header {
+    text-align: center;
+}
+
 .container {
 	max-width: 400px;
-	margin: 0 auto;
+    margin: 0 auto;
+}
+
+#inputPokemon {
+    width: 94px;
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+#btnPokemon {
+    padding: 5px;
+    border-radius: 14px;
+    font-size: 16px;
+    background-color: #9FF781;
+}
+
+.return-pokemon {
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #A4A4A4;
 }
 
 h2 {
@@ -22,7 +49,7 @@ h2 {
 }
 
 .type{
-    padding: 10px;
+    padding: 10px 40%;
     border-radius: 10px;
     text-transform: capitalize;
 }
