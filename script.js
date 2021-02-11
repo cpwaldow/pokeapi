@@ -25,7 +25,17 @@ function buscaCep(pokeName){
         document.querySelector('#pokeId').innerHTML = body.id;
         document.querySelector('#pokeImg').setAttribute('src', pokeImg)
         document.querySelector('#pokeImg').setAttribute('alt', pokeAlt)
-        document.querySelector('.type').innerHTML = body.types[0].type.name;
+
+        if(body.types.length === 1) {
+            document.querySelector('.type').innerHTML = body.types[0].type.name;
+            document.querySelector('.type1').style.display = "none";
+        }
+
+        if(body.types.length === 2) {
+            document.querySelector('.type').innerHTML = body.types[0].type.name;
+            document.querySelector('.type1').innerHTML = body.types[1].type.name;
+            document.querySelector('.type1').style.display = "unset";
+        }
 
         if(body.types[0].type.name === "grass"){
             document.querySelector('.type').style.background = '#64FE2E'
@@ -71,13 +81,48 @@ function buscaCep(pokeName){
             document.querySelector('.type').style.background = '#BDBDBD'
         }
 
+        if(body.types[1].type.name === "grass"){
+            document.querySelector('.type1').style.background = '#64FE2E'
+        }
+
+        if(body.types[1].type.name === "poison"){
+            document.querySelector('.type1').style.background = '#BE81F7'
+        }
+
+        if(body.types[1].type.name === "normal"){
+            document.querySelector('.type1').style.background = '#FBFAFA'
+        }
+
+        if(body.types[1].type.name === "flying"){
+            document.querySelector('.type1').style.background = '#99F3FD'
+        }
+
+        if(body.types[1].type.name === "fire"){
+            document.querySelector('.type1').style.background = '#F16F6F'
+        }
+
+        if(body.types[1].type.name === "water"){
+            document.querySelector('.type1').style.background = '#4498F3'
+        }
+
+        if(body.types[1].type.name === "bug"){
+            document.querySelector('.type1').style.background = '#64FE2E'
+        }
+
+        if(body.types[1].type.name === "electric"){
+            document.querySelector('.type1').style.background = '#FAE449'
+        }
+
+        if(body.types[1].type.name === "ground"){
+            document.querySelector('.type1').style.background = '#AB4904'
+        }
+
+        if(body.types[1].type.name === "fairy"){
+            document.querySelector('.type1').style.background = '#FA79C2'
+        }
+
+        if(body.types[1].type.name === "fighting"){
+            document.querySelector('.type1').style.background = '#BDBDBD'
+        }
     })
 }
-
-function hideElement(){
-    if(document.querySelector("#pokeImg").hasAttribute){
-        console.log("Imagem não aparece");
-    }
-}
-
-hideElement();

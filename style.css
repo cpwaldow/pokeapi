@@ -6,6 +6,11 @@ header {
     text-align: center;
 }
 
+#pokemon-logo {
+    width: 80%;
+    margin-bottom: 30px;
+}
+
 .container {
 	max-width: 400px;
     margin: 0 auto;
@@ -18,6 +23,7 @@ header {
     padding: 5px;
     text-align: center;
     margin: 15px 0;
+    text-transform: lowercase;
 }
 
 #btnPokemon {
@@ -48,8 +54,8 @@ h2 {
     text-transform: capitalize;
 }
 
-.type{
-    padding: 10px 40%;
+.type, .type1{
+    padding: 10px 15%;
     border-radius: 10px;
     text-transform: capitalize;
 }
@@ -63,6 +69,7 @@ h2 {
     font-size: 24px;
     font-weight: 400;
     text-align: end;
+    margin-left: 20px;
 }
 
 #pokeImg {
