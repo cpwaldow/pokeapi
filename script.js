@@ -22,13 +22,15 @@ function buscaCep(pokeName){
         return r.json()
     })
     .then(body => {
-        const pokeImg = body.sprites.other.dream_world.front_default;
+        const pokeImg = body.sprites.other["official-artwork"].front_default;
         const pokeAlt = body.name;
         
         document.querySelector('#name').innerHTML = body.name;
         document.querySelector('#pokeId').innerHTML = body.id;
-        document.querySelector('#pokeImg').setAttribute('src', pokeImg)
-        document.querySelector('#pokeImg').setAttribute('alt', pokeAlt)
+        document.querySelector('#pokeImg').setAttribute('src', pokeImg);
+        document.querySelector('#pokeImg').setAttribute('alt', pokeAlt);
+        document.querySelector('.ability').innerHTML = body.abilities[0].ability.name;
+        document.querySelector('.ability1').innerHTML = body.abilities[1].ability.name;
 
         if(body.types.length === 1) {
             document.querySelector('.type').innerHTML = body.types[0].type.name;
