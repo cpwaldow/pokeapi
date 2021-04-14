@@ -3,6 +3,12 @@ const btnPokemon = document.getElementById('btnPokemon');
 const firstTypePokemon = document.querySelector('.first-type');
 const secoundTypePokemon = document.querySelector('.secound-type');
 
+const pokemonName = document.querySelector('#name');
+const pokemonId = document.querySelector('#pokeId');
+const pokemonImage = document.querySelector('#pokeImg');
+const pokemonFirstAbility = document.querySelector('.ability');
+const pokemonSecoundAbility = document.querySelector('.ability1');
+
 btnPokemon.addEventListener('click', hendleClick);
 
 function hendleClick(event) {
@@ -17,25 +23,24 @@ function forceLower(strInput) {
 
 function pokeSearch(pokeName){
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
-    .then(r => {
+    .then((r) => {
         if(r.status === 404){
             alert("OPS! Pokemon not found, try again")
         }
         return r.json()
     })
-    .then(body => {
+    .then((body) => {
         const pokeImg = body.sprites.other["official-artwork"].front_default;
         const pokeAlt = body.name;
         const pokeTypeFirst = body.types[0].type.name;
         firstTypePokemon.classList.add(`${pokeTypeFirst}`);
         
-        
-        document.querySelector('#name').innerHTML = body.name;
-        document.querySelector('#pokeId').innerHTML = body.id;
-        document.querySelector('#pokeImg').setAttribute('src', pokeImg);
-        document.querySelector('#pokeImg').setAttribute('alt', pokeAlt);
-        document.querySelector('.ability').innerHTML = body.abilities[0].ability.name;
-        document.querySelector('.ability1').innerHTML = body.abilities[1].ability.name;
+        pokemonName.innerHTML = body.name;
+        pokemonId.innerHTML = body.id;
+        pokemonImage.setAttribute('src', pokeImg);
+        pokemonImage.setAttribute('alt', pokeAlt);
+        pokemonFirstAbility.innerHTML = body.abilities[0].ability.name;
+        pokemonSecoundAbility.innerHTML = body.abilities[1].ability.name;
 
         if(body.types.length === 1) {
             firstTypePokemon.innerHTML = body.types[0].type.name;
