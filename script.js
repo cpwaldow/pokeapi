@@ -8,8 +8,7 @@ const pokemonImage = document.querySelector('#pokeImg');
 
 btnPokemon.addEventListener('click', hendleClick);
 
-function hendleClick(event) {
-    event.preventDefault();
+function hendleClick() {
     const pokeId = inputPokemon.value;
     pokeSearch(pokeId);
 }
