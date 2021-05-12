@@ -1,13 +1,10 @@
 const inputPokemon = document.getElementById('inputPokemon');
 const btnPokemon = document.getElementById('btnPokemon');
 const firstTypePokemon = document.querySelector('.first-type');
-const secoundTypePokemon = document.querySelector('.secound-type');
 
 const pokemonName = document.querySelector('#name');
 const pokemonId = document.querySelector('#pokeId');
 const pokemonImage = document.querySelector('#pokeImg');
-const pokemonFirstAbility = document.querySelector('.ability');
-const pokemonSecoundAbility = document.querySelector('.ability1');
 
 btnPokemon.addEventListener('click', hendleClick);
 
@@ -39,20 +36,7 @@ function pokeSearch(pokeName){
         pokemonId.innerHTML = body.id;
         pokemonImage.setAttribute('src', pokeImg);
         pokemonImage.setAttribute('alt', pokeAlt);
-        pokemonFirstAbility.innerHTML = body.abilities[0].ability.name;
-        pokemonSecoundAbility.innerHTML = body.abilities[1].ability.name;
+        firstTypePokemon.innerHTML = body.types[0].type.name;
 
-        if(body.types.length === 1) {
-            firstTypePokemon.innerHTML = body.types[0].type.name;
-            secoundTypePokemon.style.display = "none";
-        }
-
-        if(body.types.length === 2) {
-            firstTypePokemon.innerHTML = body.types[0].type.name;
-            secoundTypePokemon.innerHTML = body.types[1].type.name;
-            secoundTypePokemon.style.display = "unset";
-            const pokeTypeSecound = body.types[1].type.name;
-            secoundTypePokemon.classList.add(`${pokeTypeSecound}`);
-        }
     })
 }
