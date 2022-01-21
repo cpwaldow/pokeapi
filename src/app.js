@@ -1,4 +1,4 @@
-const fetchApi = async () => {
+const fetchApiList = async () => {
   const response = await fetch(
     'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0',
   );
@@ -7,27 +7,24 @@ const fetchApi = async () => {
 };
 
 const resultReturn = async () => {
-  const { results } = await fetchApi();
+  const { results } = await fetchApiList();
   results.forEach((element) => {
     createComponent(element.name);
-    console.log(element);
   });
 };
 
 const createComponent = (nome) => {
   const listagem = document.querySelector('#listagem');
-
   const section = document.createElement('section');
+  const link = document.createElement('a');
 
   section.classList.add('pokecard');
 
-  const link = document.createElement('a');
-
   link.innerText = nome;
+  link.setAttribute('href', 'teste');
 
   section.appendChild(link);
   return listagem.appendChild(section);
 };
 
-createComponent();
 resultReturn();
