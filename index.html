@@ -2,42 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>PokeAPI</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista pokemon</title>
 </head>
 
 <body>
-    <header>
-        <section class="container">
-            <img src="pokemon-logo.png" alt="Pokemon Logo" id="pokemon-logo">
-        </section>
+  <main id="listagem">
 
-    </header>
-
-    <body>
-        <section class="container return-pokemon">
-            <form id="buscaPokemon" autocomplete="off">
-                <input type="text" id="inputPokemon" name=Pokemon onkeyup="return forceLower(this)" autocomplete="off">
-                <input type="button" value="Search" id="btnPokemon">
-            </form>
-            <section class="name-id">
-                <div style="margin-bottom: 15px;">
-                    <img src="" alt="" id="pokeImg">
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <span id="name"></span>
-                    <span id="pokeId"></span>
-                </div>
-                <div style="margin-bottom: 30px;">
-                    <span class="first-type"></span>
-                </div>
-            </section>
-        </section>
-    </body>
-
-    <script src="script.js"></script>
+  </main>
+  <script src="src/app.js"></script>
 </body>
 
 </html>
