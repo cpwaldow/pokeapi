@@ -27,3 +27,8 @@ body {
 .pokecard img {
   width: 110px;
 }
+
+.pokecard p {
+  font-size: 20px;
+  margin: 0;
+}
