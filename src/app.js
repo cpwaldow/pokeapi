@@ -38,5 +38,3 @@ const createComponent = ({ nome, image, type }) => {
 };
 
 resultReturn();
-
-console.log('ola');
